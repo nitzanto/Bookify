@@ -17,15 +17,6 @@
         "tsConfigPath": "libs/common/tsconfig.lib.json"
       }
     },
-    "Bookify-New": {
-      "type": "application",
-      "root": "apps/Bookify-New",
-      "entryFile": "main",
-      "sourceRoot": "apps/Bookify-New/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/Bookify-New/tsconfig.app.json"
-      }
-    },
     "reservations": {
       "type": "application",
       "root": "apps/reservations",
