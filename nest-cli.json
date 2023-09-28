@@ -1,11 +1,11 @@
 {
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "apps/Bookify-New/src",
+  "sourceRoot": "apps/reservations/src",
   "compilerOptions": {
     "deleteOutDir": true,
     "webpack": true,
-    "tsConfigPath": "apps/Bookify-New/tsconfig.app.json"
+    "tsConfigPath": "apps/reservations/tsconfig.app.json"
   },
   "projects": {
     "common": {
@@ -28,5 +28,5 @@
     }
   },
   "monorepo": true,
-  "root": "apps/Bookify-New"
+  "root": "apps/reservations"
 }
