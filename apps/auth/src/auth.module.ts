@@ -26,6 +26,7 @@ import * as Joi from 'joi';
           expiresIn: `${configService.get('JWT_EXPIRATION')}s`,
         },
       }),
+      inject: [ConfigService],
     }),
   ],
   controllers: [AuthController],
