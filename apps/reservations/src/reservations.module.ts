@@ -38,6 +38,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
             port: configService.get('AUTH_PORT'),
           },
         }),
+        inject: [ConfigService],
       },
     ]),
   ],
