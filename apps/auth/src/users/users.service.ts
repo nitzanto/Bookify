@@ -14,7 +14,7 @@ export class UsersService {
     });
   }
 
-  async validateUser(email: string, password: string) {
+  async verifyUser(email: string, password: string) {
     const user = await this.usersRepository.findOne({ email });
     const passwordIsValid = await bcrypt.compare(password, user.password);
 
