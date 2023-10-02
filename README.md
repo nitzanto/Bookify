@@ -20,7 +20,7 @@
         <li>Asynchronous message processing with RabbitMQ (WIP)</li>
         <li>Automated CI/CD pipeline with CloudBuild (WIP)</li>
         <li>Load balancer provision for high availability(WIP)</li>
-        <li>Dockerized microservices for easy deployment(WIP)</li>
+        <li>Dockerized microservices for easy deployment</li>
     </ul> 
     <h2>Bookify - Architecture</h2>
     <p>
