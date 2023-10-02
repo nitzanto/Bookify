@@ -22,9 +22,9 @@
         <li>Load balancer provision for high availability(WIP)</li>
         <li>Dockerized microservices for easy deployment(WIP)</li>
     </ul> 
-    <h2>Usage</h2>
+    <h2>Bookify - Architecture</h2>
     <p>
-      WIP
+      <img src="https://i.imgur.com/if9GmVc.png" />
     </p>
 </body>
 </html>
