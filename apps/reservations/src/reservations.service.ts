@@ -17,9 +17,10 @@ export class ReservationsService {
     return this.paymentsService
       .send('create_charge', createReservationDto.charge)
       .pipe(
-        map(() => {
+        map((res) => {
           return this.reservationsRepository.create({
             ...createReservationDto,
+            invoiceId: res.id,
             timestamp: new Date(),
             userId,
           });
