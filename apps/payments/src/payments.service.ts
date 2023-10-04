@@ -20,7 +20,7 @@ export class PaymentsService {
       confirm: true,
       currency: 'usd',
       payment_method: 'pm_card_visa',
-      return_url: null,
+      return_url: 'https://localhost:3000/',
       automatic_payment_methods: {
         enabled: true,
         allow_redirects: 'never',
