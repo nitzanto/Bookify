@@ -20,6 +20,11 @@ export class PaymentsService {
       confirm: true,
       currency: 'usd',
       payment_method: 'pm_card_visa',
+      return_url: null,
+      automatic_payment_methods: {
+        enabled: true,
+        allow_redirects: 'never',
+      },
     });
 
     return paymentIntent;
