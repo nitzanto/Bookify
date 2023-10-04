@@ -28,6 +28,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
             port: configService.get('NOTIFICATIONS_PORT'),
           },
         }),
+        inject: [ConfigService],
       },
     ]),
   ],
