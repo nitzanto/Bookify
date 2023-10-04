@@ -41,6 +41,10 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
           options: {
             host: configService.get('AUTH_HOST'),
             port: configService.get('AUTH_PORT'),
+            AUTH_HOST: Joi.string().required(),
+            PAYMENTS_HOST: Joi.string().required(),
+            AUTH_PORT: Joi.number().required(),
+            PAYMENTS_PORT: Joi.number().required(),
           },
         }),
         inject: [ConfigService],
