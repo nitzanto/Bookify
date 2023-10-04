@@ -1,5 +1,10 @@
 import { CardDto } from '@app/common/dto/card.dto';
-import { IsDefined, IsNotEmpty, ValidateNested } from 'class-validator';
+import {
+  IsDefined,
+  IsNotEmpty,
+  IsNumber,
+  ValidateNested,
+} from 'class-validator';
 
 export class CreateChargeDto {
   @IsDefined()
@@ -7,5 +12,6 @@ export class CreateChargeDto {
   @ValidateNested()
   card: CardDto;
 
+  @IsNumber()
   amount: number;
 }
