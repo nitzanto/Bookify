@@ -12,7 +12,7 @@ export class NotificationsService {
     auth: {
       type: 'OAuth2',
       user: this.configService.get('SMTP_USER'),
-      clientId: this.configService.get('GOOGLE_OAuth'),
+      clientId: this.configService.get('GOOGLE_OAUTH_CLIENT_ID'),
       clientSecret: this.configService.get('GOOGLE_OAUTH_CLIENT_SECRET'),
       refreshToken: this.configService.get('GOOGLE_OAUTH_REFRESH_TOKEN'),
     },
