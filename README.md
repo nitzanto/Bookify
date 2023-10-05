@@ -15,7 +15,7 @@
         <li>Scalable backend architecture</li>
         <li>Microservices implementation using NestJS</li>
         <li>Integration with Stripe for payment processing</li>
-        <li>Email notifications using nodemailer and Gmail (WIP)</li>
+        <li>Email notifications using nodemailer and Gmail</li>
         <li>Data persistence with MongoDB</li>
         <li>Asynchronous message processing with RabbitMQ (WIP)</li>
         <li>Automated CI/CD pipeline with CloudBuild (WIP)</li>
