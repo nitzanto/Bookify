@@ -1,5 +1,5 @@
 import { createParamDecorator, ExecutionContext } from '@nestjs/common';
-import { UserDocument } from '../../../../apps/auth/src/users/models/user.schema';
+import { UserDocument } from '@app/common/models';
 
 // Decorator used to pull the user object from the request object data
 const getCurrentUserByContext = (context: ExecutionContext): UserDocument => {
