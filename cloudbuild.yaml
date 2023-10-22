@@ -47,7 +47,7 @@ steps:
       'me-west1-docker.pkg.dev/bookify-401118/payments/production'
     ]
 
-  # Notifications
+  # Notifications Service
   - name: 'gcr.io/cloud-builders/docker'
     args: [
       'build',
