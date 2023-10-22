@@ -1,0 +1,66 @@
+steps:
+  # Reservations Service
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t',
+      'me-west1-docker.pkg.dev/bookify-401118/reservations/production',
+      '-f',
+      'apps/reservations/Dockerfile',
+      '.',
+    ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push',
+      'me-west1-docker.pkg.dev/bookify-401118/reservations/production'
+    ]
+
+  # Auth Service
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t',
+      'me-west1-docker.pkg.dev/bookify-401118/auth/production',
+      '-f',
+      'apps/auth/Dockerfile',
+      '.',
+    ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push',
+      'me-west1-docker.pkg.dev/bookify-401118/auth/production'
+    ]
+
+  # Payments Service
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t',
+      'me-west1-docker.pkg.dev/bookify-401118/payments/production',
+      '-f',
+      'apps/payments/Dockerfile',
+      '.',
+    ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push',
+      'me-west1-docker.pkg.dev/bookify-401118/payments/production'
+    ]
+
+  # Notifications Service
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t',
+      'me-west1-docker.pkg.dev/bookify-401118/notifications/production',
+      '-f',
+      'apps/notifications/Dockerfile',
+      '.',
+    ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push',
+      'me-west1-docker.pkg.dev/bookify-401118/notifications/production'
+    ]
+
+
