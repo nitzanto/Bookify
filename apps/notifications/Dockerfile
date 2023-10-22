@@ -10,7 +10,7 @@ RUN npm install -g pnpm
 
 RUN pnpm install
 
-COPY apps/auth apps/auth
+COPY apps/notifications apps/notifications
 COPY libs libs
 
 RUN pnpm run build
