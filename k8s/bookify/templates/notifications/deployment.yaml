@@ -15,5 +15,15 @@ spec:
         app: notifications
     spec:
       containers:
-      - image: me-west1-docker.pkg.dev/bookify-401118/notifications/production
-        name: notifications
+        - image: me-west1-docker.pkg.dev/bookify-401118/notifications/production
+          name: notifications
+          env:
+            - name: PORT
+              value: '3000'
+            - name: GOOGLE_OAUTH_CLIENT_ID
+              value: 736804291538-racjen4jor9iuc0h8viodcg1tp92nrnt.apps.googleusercontent.com
+            - name: SMTP_USER
+              value: nitzan16001@gmail.com
+
+          ports:
+            - containerPort: 3000
