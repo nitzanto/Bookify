@@ -40,7 +40,8 @@
     "pino-pretty": "^10.2.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.1",
+    "cookie-parser": "^1.4.6"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.1.18",
@@ -53,7 +54,6 @@
     "@types/supertest": "^2.0.13",
     "@typescript-eslint/eslint-plugin": "^6.7.3",
     "@typescript-eslint/parser": "^6.7.3",
-    "cookie-parser": "^1.4.6",
     "eslint": "^8.50.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
