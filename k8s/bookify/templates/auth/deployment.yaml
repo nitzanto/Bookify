@@ -17,3 +17,9 @@ spec:
       containers:
       - image: me-west1-docker.pkg.dev/bookify-401118/auth/production
         name: auth
+        env:
+          - name: MONGODB_URI
+            valueFrom:
+              secretKeyRef:
+                name: mongodb
+                key: connectionString
