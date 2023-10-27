@@ -29,9 +29,9 @@ spec:
             value: auth
           - name: AUTH_PORT
             value: '3002'
-          - name: PAYMENT_HOST
+          - name: PAYMENTS_HOST
             value: payments
-          - name: PAYMENT_PORT
+          - name: PAYMENTS_PORT
             value: '3001'
         ports:
           - containerPort: 3004
