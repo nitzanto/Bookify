@@ -15,5 +15,21 @@ spec:
         app: payments
     spec:
       containers:
-      - image: me-west1-docker.pkg.dev/bookify-401118/payments/production
-        name: payments
+        - image: me-west1-docker.pkg.dev/bookify-401118/payments/production
+          name: payments
+          env:
+            - name: PORT
+              value: '3001'
+            - name: NOTIFICATIONS_HOST
+              value: notifications
+            - name: NOTIFICATIONS_PORT
+              value: '3000'
+            - name: STRIPE_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: stripe
+                  key: apiKey
+
+
+          ports:
+            - containerPort: 3001
