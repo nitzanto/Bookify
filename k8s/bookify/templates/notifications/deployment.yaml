@@ -24,6 +24,16 @@ spec:
               value: 736804291538-racjen4jor9iuc0h8viodcg1tp92nrnt.apps.googleusercontent.com
             - name: SMTP_USER
               value: nitzan16001@gmail.com
+            - name: GOOGLE_OAUTH_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: google
+                  key: clientSecret
+            - name: GOOGLE_OAUTH_REFRESH_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: google
+                  key: refreshToken
 
           ports:
             - containerPort: 3000
