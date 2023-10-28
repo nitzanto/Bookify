@@ -3,7 +3,7 @@ kind: Service
 metadata:
   labels:
     app: auth
-  name: auth-tcp
+  name: auth-http
 spec:
   ports:
     - name: "http"
