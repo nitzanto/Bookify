@@ -4,6 +4,12 @@ services:
       dockerfile: ./Dockerfile
     volumes:
       - ./specs:/usr/src/app/specs
+    depends_on:
+      - reservations
+      - auth
+      - payments
+      - notifications
+      - mongo
   reservations:
     image: me-west1-docker.pkg.dev/bookify-401118/reservations/production
     env_file:
