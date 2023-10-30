@@ -16,7 +16,7 @@ describe('Reservations', () => {
       },
     });
 
-    const response = await fetch('http://auth:3001/login', {
+    const response = await fetch('http://auth:3001/auth/login', {
       method: 'POST',
       body: JSON.stringify(user),
       headers: {
