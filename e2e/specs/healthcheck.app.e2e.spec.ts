@@ -2,16 +2,16 @@ import { ping } from 'tcp-ping';
 
 describe('Health', () => {
   test('Reservations', async () => {
-    const res = await fetch('http://reservations:3000');
-    expect(res.ok).toBeTruthy();
+    const response = await fetch('http://reservations:3000');
+    expect(response.ok).toBeTruthy();
   });
 
   test('Auth', async () => {
-    const res = await fetch('http://auth:3001');
-    expect(res.ok).toBeTruthy();
+    const response = await fetch('http://auth:3001');
+    expect(response.ok).toBeTruthy();
   });
 
-  test('Payments', async (done) => {
+  test('Payments', (done) => {
     ping({ address: 'payments', port: 3003 }, (err) => {
       if (err) {
         fail();
@@ -20,7 +20,7 @@ describe('Health', () => {
     });
   });
 
-  test('Notifications', async (done) => {
+  test('Notifications', (done) => {
     ping({ address: 'notifications', port: 3004 }, (err) => {
       if (err) {
         fail();
