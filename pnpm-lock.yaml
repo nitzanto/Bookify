@@ -38,6 +38,9 @@ dependencies:
   class-validator:
     specifier: ^0.14.0
     version: 0.14.0
+  cookie-parser:
+    specifier: ^1.4.6
+    version: 1.4.6
   express:
     specifier: ^4.18.2
     version: 4.18.2
@@ -94,15 +97,15 @@ devDependencies:
   '@types/supertest':
     specifier: ^2.0.13
     version: 2.0.13
+  '@types/tcp-ping':
+    specifier: ^0.1.4
+    version: 0.1.4
   '@typescript-eslint/eslint-plugin':
     specifier: ^6.7.3
     version: 6.7.3(@typescript-eslint/parser@6.7.3)(eslint@8.50.0)(typescript@5.2.2)
   '@typescript-eslint/parser':
     specifier: ^6.7.3
     version: 6.7.3(eslint@8.50.0)(typescript@5.2.2)
-  cookie-parser:
-    specifier: ^1.4.6
-    version: 1.4.6
   eslint:
     specifier: ^8.50.0
     version: 8.50.0
@@ -124,6 +127,9 @@ devDependencies:
   supertest:
     specifier: ^6.3.3
     version: 6.3.3
+  tcp-ping:
+    specifier: ^0.1.1
+    version: 0.1.1
   ts-jest:
     specifier: ^29.1.1
     version: 29.1.1(@babel/core@7.23.0)(jest@29.7.0)(typescript@5.2.2)
@@ -2403,6 +2409,10 @@ packages:
       '@types/superagent': 4.1.19
     dev: true
 
+  /@types/tcp-ping@0.1.4:
+    resolution: {integrity: sha512-ZINPhRdg5SWtQ9Lsapp4E1olPmohOuFplIas57lgfoY7vOjb56SARWnm/k6d8Q26mn+vKBOIsGnKG4kUQoaavg==}
+    dev: true
+
   /@types/validator@13.11.2:
     resolution: {integrity: sha512-nIKVVQKT6kGKysnNt+xLobr+pFJNssJRi2s034wgWeFBUx01fI8BeHTW2TcRp7VcFu9QCYG8IlChTuovcm0oKQ==}
 
@@ -3323,7 +3333,7 @@ packages:
     dependencies:
       cookie: 0.4.1
       cookie-signature: 1.0.6
-    dev: true
+    dev: false
 
   /cookie-signature@1.0.6:
     resolution: {integrity: sha512-QADzlaHc8icV8I7vbaJXJwod9HWYp8uCqf1xa4OfNu1T7JVxQIrUgOWtHdNDtPiywmFbiS12VjotIXLrKM3orQ==}
@@ -3331,7 +3341,7 @@ packages:
   /cookie@0.4.1:
     resolution: {integrity: sha512-ZwrFkGJxUR3EIoXtO+yVE69Eb7KlixbaeAWfBQB9vVsNn/o+Yw69gBWSSDK825hQNdN+wF8zELf3dFNl/kxkUA==}
     engines: {node: '>= 0.6'}
-    dev: true
+    dev: false
 
   /cookie@0.5.0:
     resolution: {integrity: sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==}
@@ -6319,6 +6329,10 @@ packages:
   /tapable@2.2.1:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
     engines: {node: '>=6'}
+    dev: true
+
+  /tcp-ping@0.1.1:
+    resolution: {integrity: sha512-7Ed10Ds0hYnF+O1lfiZ2iSZ1bCAj+96Madctebmq7Y1ALPWlBY4YI8C6pCL+UTlshFY5YogixKLpgDP/4BlHrw==}
     dev: true
 
   /terser-webpack-plugin@5.3.9(webpack@5.88.2):
