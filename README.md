@@ -17,7 +17,7 @@
         <li>Integration with Stripe for payment processing</li>
         <li>Email notifications using nodemailer and Gmail</li>
         <li>Data persistence with MongoDB</li>
-        <li>Asynchronous message processing with RabbitMQ (WIP)</li>
+        <li>Asynchronous message processing with RabbitMQ</li>
         <li>Automated CI/CD pipeline with CloudBuild</li>
         <li>Application running on Google GKE</li>
         <li>Application running on AWS EKS (WIP)</li>
