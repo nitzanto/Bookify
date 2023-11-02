@@ -8,11 +8,13 @@
     <img src="https://i.imgur.com/CwsSYmB.png"></img>
     <h1>Bookify - Reservation Booking System</h1>
     <p>
-        This project is a reservation booking system with various features, including a scalable backend with NestJS microservices, Kubernetes deployment on Google Cloud, JWT authentication, Stripe payment integration, email notifications, and RabbitMQ message processing. Implemented CI/CD pipelines and production Dockerfiles for each microservice.
+        A <string>production-grade</string> reservation booking system with various features, including a scalable backend with NestJS microservices, Kubernetes deployment on Google Cloud, JWT authentication, Stripe payment integration, email notifications, and RabbitMQ message processing. Implemented CI/CD pipelines and production Dockerfiles for each microservice.
     </p>
     <h2>Key Features</h2>
     <ul>
         <li>Scalable backend architecture</li>
+        <li>Creation of a common library for code sharing across multiple applications.</li>
+        <li>Implementation of end-to-end (E2E) testing framework with Jest for NestJS microservices.</li>
         <li>Microservices implementation using NestJS</li>
         <li>Integration with Stripe for payment processing</li>
         <li>Email notifications using nodemailer and Gmail</li>
@@ -21,7 +23,7 @@
         <li>Automated CI/CD pipeline with CloudBuild</li>
         <li>Application running on Google GKE</li>
         <li>Load balancer provision for high availability</li>
-        <li>Dockerized microservices for easy deployment</li>
+        <li>Creation of production-ready Dockerfiles and package.json for each microservice.</li>
     </ul> 
     <h2>Bookify - Architecture</h2>
     <p>
