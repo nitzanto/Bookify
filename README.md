@@ -8,7 +8,7 @@
     <img src="https://i.imgur.com/CwsSYmB.png"></img>
     <h1>Bookify - Reservation Booking System</h1>
     <p>
-        A <string>production-grade</string> reservation booking system with various features, including a scalable backend with NestJS microservices, Kubernetes deployment on Google Cloud, JWT authentication, Stripe payment integration, email notifications, and RabbitMQ message processing. Implemented CI/CD pipelines and production Dockerfiles for each microservice.
+        A <strong>production-grade</strong> reservation booking system with various features, including a scalable backend with NestJS microservices, Kubernetes deployment on Google Cloud, JWT authentication, Stripe payment integration, email notifications, and RabbitMQ message processing. Implemented CI/CD pipelines and production Dockerfiles for each microservice.
     </p>
     <h2>Key Features</h2>
     <ul>
