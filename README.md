@@ -13,7 +13,7 @@
     <h2>Key Features</h2>
     <ul>
         <li>Scalable backend architecture</li>
-        <li>Event Driven Architecture<li>
+        <li>Event Driven Architecture</li>
         <li>Creation of a monorepo which houses multiple NestJS applications (Micro-services) within a single repository.</li>
         <li>Creation of a common library for code sharing across multiple applications.</li>
         <li>Implementation of end-to-end (E2E) testing framework with Jest for NestJS microservices.</li>
