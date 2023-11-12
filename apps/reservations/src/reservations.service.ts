@@ -18,8 +18,9 @@ export class ReservationsService {
     { email, _id: userId }: UserDto,
   ) {
     return this.paymentsService
-      .send('create_charge', { ...createReservationDto.charge, email })
+      .send('create_charge', { ...createReservationDto.charge, email }) // async Request & Response event
       .pipe(
+        // Response handling
         map((res) => {
           return this.reservationsRepository.create({
             ...createReservationDto,

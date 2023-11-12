@@ -33,6 +33,7 @@ export class PaymentsService {
       },
     });
 
+    // Async broadcast event/message to the notifications microservice triggering a notification email event
     this.notificationsService.emit('notify_email', {
       email,
       text: `Your payment of $${amount} has completed successfully`,

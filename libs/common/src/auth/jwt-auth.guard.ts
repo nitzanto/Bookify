@@ -11,6 +11,7 @@ import { UserDto } from '@app/common/dto';
 
 @Injectable()
 export class JwtAuthGuard implements CanActivate {
+  // Injects the auth microservice into ClientProxy for communication with that microservice
   constructor(@Inject(AUTH_SERVICE) private readonly authClient: ClientProxy) {}
 
   canActivate(
@@ -23,7 +24,7 @@ export class JwtAuthGuard implements CanActivate {
       return false;
     }
 
-    // sending to the auth service which matches the current message pattern
+    // sends a message to the 'authenticate' method of the 'auth' service with the JWT token for validation.
     return this.authClient
       .send<UserDto>('authenticate', {
         Authentication: jwt,
@@ -32,8 +33,8 @@ export class JwtAuthGuard implements CanActivate {
         tap((res) => {
           context.switchToHttp().getRequest().user = res;
         }),
-        map(() => true), // returns true when authenticated
-        catchError(() => of(false)),
+        map(() => true), // allowing access to the guarded route if authenticated
+        catchError(() => of(false)), // If the token is invalid or an error occurs during verification denys access to the route
       );
   }
 }

@@ -3,13 +3,14 @@ import { PassportStrategy } from '@nestjs/passport';
 import { Strategy } from 'passport-local';
 import { UsersService } from '../users/users.service';
 
+// Local Strategy is used for traditional login authentication
 @Injectable()
 export class LocalStrategy extends PassportStrategy(Strategy) {
   constructor(private readonly usersService: UsersService) {
     super({ usernameField: 'email' });
   }
 
-  // Validating the user
+  // Validating the user against the DB to grant access
   async validate(email: string, password: string) {
     try {
       return this.usersService.verifyUser(email, password);
