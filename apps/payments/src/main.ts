@@ -1,5 +1,5 @@
 import { NestFactory } from '@nestjs/core';
-import { PaymentsModule } from './payments.module';
+import { PaymentsModule } from './modules/payments.module';
 import { Transport } from '@nestjs/microservices';
 import { ConfigService } from '@nestjs/config';
 import { Logger } from 'nestjs-pino';

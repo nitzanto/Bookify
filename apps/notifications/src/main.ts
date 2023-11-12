@@ -2,7 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { Transport } from '@nestjs/microservices';
 import { ConfigService } from '@nestjs/config';
 import { Logger } from 'nestjs-pino';
-import { NotificationsModule } from './notifications.module';
+import { NotificationsModule } from './modules/notifications.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(NotificationsModule);
