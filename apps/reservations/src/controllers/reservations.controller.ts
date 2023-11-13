@@ -7,6 +7,7 @@ import {
   Param,
   Delete,
   UseGuards,
+  HttpCode,
 } from '@nestjs/common';
 import { ReservationsService } from '../services/reservations.service';
 import { CreateReservationDto } from '../dto/create-reservation.dto';
@@ -17,6 +18,7 @@ import { CurrentUser, JwtAuthGuard, UserDto } from '@app/common';
 export class ReservationsController {
   constructor(private readonly reservationsService: ReservationsService) {}
 
+  @HttpCode(201)
   @UseGuards(JwtAuthGuard)
   @Post()
   async create(
@@ -31,18 +33,20 @@ export class ReservationsController {
     return _user;
   }
 
+  @HttpCode(200)
   @UseGuards(JwtAuthGuard)
   @Get()
   async findAll() {
     return this.reservationsService.findAll();
   }
-
+  @HttpCode(200)
   @UseGuards(JwtAuthGuard)
   @Get(':id')
   async findOne(@Param('id') id: string) {
     return this.reservationsService.findOne(id);
   }
 
+  @HttpCode(200)
   @UseGuards(JwtAuthGuard)
   @Patch(':id')
   async update(
@@ -52,6 +56,7 @@ export class ReservationsController {
     return this.reservationsService.update(id, updateReservationDto);
   }
 
+  @HttpCode(200)
   @UseGuards(JwtAuthGuard)
   @Delete(':id')
   async remove(@Param('id') id: string) {
