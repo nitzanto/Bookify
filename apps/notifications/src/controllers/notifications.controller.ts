@@ -10,6 +10,11 @@ export class NotificationsController {
   @UsePipes(new ValidationPipe())
   @EventPattern('notify_email')
   async notifyEmail(@Payload() data: NotifyEmailDto) {
-    await this.notificationsService.notifyEmail(data);
+    try {
+      await this.notificationsService.notifyEmail(data);
+    } catch (err) {
+      console.log(`Error notifying mail: ${err}`);
+      return 'Notification to mail error has occurred';
+    }
   }
 }
