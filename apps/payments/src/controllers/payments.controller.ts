@@ -7,7 +7,6 @@ import {
   RmqContext,
 } from '@nestjs/microservices';
 import { PaymentsCreateChargeDto } from '../dto/payments-create-charge.dto';
-import { Response } from 'express';
 
 @Controller()
 export class PaymentsController {
@@ -19,7 +18,6 @@ export class PaymentsController {
   async createCharge(
     @Payload() data: PaymentsCreateChargeDto, // extracts the payload data from the incoming message for further processing.
     @Ctx() context: RmqContext,
-    @Res() res: Response,
   ) {
     const channel = context.getChannelRef();
     const originalMsg = context.getMessage();
@@ -29,9 +27,8 @@ export class PaymentsController {
 
       return this.paymentsService.makePayment(data);
     } catch (err) {
-      return res.status(500).json({
-        error: `Payment processing failed: ${err.message}`,
-      });
+      console.error('An error occurred:', err);
+      return 'Payment processing failed';
     }
   }
 }
