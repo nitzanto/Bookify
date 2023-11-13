@@ -3,10 +3,10 @@ import {
   UnauthorizedException,
   UnprocessableEntityException,
 } from '@nestjs/common';
-import { CreateUserDto } from './dto/create-user.dto';
-import { UsersRepository } from './users.repository';
+import { CreateUserDto } from '../dto/create-user.dto';
+import { UsersRepository } from '../repositories/users.repository';
 import * as bcrypt from 'bcryptjs';
-import { GetUserDto } from './dto/get-user.dto';
+import { GetUserDto } from '../dto/get-user.dto';
 
 @Injectable()
 export class UsersService {
