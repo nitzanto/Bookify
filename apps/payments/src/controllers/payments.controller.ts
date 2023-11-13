@@ -24,6 +24,6 @@ export class PaymentsController {
 
     channel.ack(originalMsg); // acknowledges the receipt of the message, confirming its processing.
 
-    return this.paymentsService.createCharge(data);
+    return this.paymentsService.makePayment(data);
   }
 }
