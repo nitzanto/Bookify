@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { CreateReservationDto } from '../dto/create-reservation.dto';
 import { UpdateReservationDto } from '../dto/update-reservation.dto';
 import { ReservationsRepository } from '../repositories/reservations.repository';
@@ -33,11 +33,20 @@ export class ReservationsService {
   }
 
   async findAll() {
-    return this.reservationsRepository.find({});
+    const reservations = this.reservationsRepository.find({});
+
+    if (!reservations) throw new NotFoundException(`Couldnt find reservations`);
+
+    return reservations;
   }
 
   async findOne(_id: string) {
-    return this.reservationsRepository.findOne({ _id });
+    const reservation = this.reservationsRepository.findOne({ _id });
+
+    if (!reservation)
+      throw new NotFoundException(`Couldnt find reservation with ID: ${_id}`);
+
+    return reservation;
   }
 
   async update(_id: string, updateReservationDto: UpdateReservationDto) {

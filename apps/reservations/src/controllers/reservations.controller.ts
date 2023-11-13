@@ -8,7 +8,10 @@ import {
   Delete,
   UseGuards,
   HttpCode,
+  Res,
+  NotFoundException,
 } from '@nestjs/common';
+import { Response } from 'express';
 import { ReservationsService } from '../services/reservations.service';
 import { CreateReservationDto } from '../dto/create-reservation.dto';
 import { UpdateReservationDto } from '../dto/update-reservation.dto';
@@ -39,11 +42,21 @@ export class ReservationsController {
   async findAll() {
     return this.reservationsService.findAll();
   }
+
   @HttpCode(200)
   @UseGuards(JwtAuthGuard)
   @Get(':id')
-  async findOne(@Param('id') id: string) {
-    return this.reservationsService.findOne(id);
+  async findOne(@Res() res: Response, @Param('id') id: string) {
+    try {
+      return this.reservationsService.findOne(id);
+    } catch (err) {
+      if (err instanceof NotFoundException) {
+        throw err;
+      }
+      return res.status(500).json({
+        error: `An error occurred while finding the reservation: ${err.message}`,
+      });
+    }
   }
 
   @HttpCode(200)
