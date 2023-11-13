@@ -25,22 +25,39 @@ export class ReservationsController {
   @UseGuards(JwtAuthGuard)
   @Post()
   async create(
+    @Res() res: Response,
     @Body() createReservationDto: CreateReservationDto,
     @CurrentUser() user: UserDto,
   ) {
-    const _user = await this.reservationsService.create(
-      createReservationDto,
-      user,
-    );
+    try {
+      const _user = await this.reservationsService.create(
+        createReservationDto,
+        user,
+      );
 
-    return _user;
+      return _user;
+    } catch (err) {
+      res.status(500).json({
+        message: 'An error occurred while ordering the reservation',
+        error: err.message,
+      });
+    }
   }
 
   @HttpCode(200)
   @UseGuards(JwtAuthGuard)
   @Get()
-  async findAll() {
-    return this.reservationsService.findAll();
+  async findAll(@Res() res: Response) {
+    try {
+      return this.reservationsService.findAll();
+    } catch (err) {
+      if (err instanceof NotFoundException) {
+        throw err;
+      }
+      return res.status(500).json({
+        error: `An error occurred while finding the reservations: ${err.message}`,
+      });
+    }
   }
 
   @HttpCode(200)
@@ -65,14 +82,27 @@ export class ReservationsController {
   async update(
     @Param('id') id: string,
     @Body() updateReservationDto: UpdateReservationDto,
+    @Res() res: Response,
   ) {
-    return this.reservationsService.update(id, updateReservationDto);
+    try {
+      return this.reservationsService.update(id, updateReservationDto);
+    } catch (err) {
+      return res.status(500).json({
+        error: `An error occurred while updating the reservation ${id}: ${err.message}`,
+      });
+    }
   }
 
   @HttpCode(200)
   @UseGuards(JwtAuthGuard)
   @Delete(':id')
-  async remove(@Param('id') id: string) {
-    return this.reservationsService.remove(id);
+  async remove(@Param('id') id: string, @Res() res: Response) {
+    try {
+      return this.reservationsService.remove(id);
+    } catch (err) {
+      return res.status(500).json({
+        error: `An error occurred while deleting the reservation ${id}: ${err.message}`,
+      });
+    }
   }
 }
