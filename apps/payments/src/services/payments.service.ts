@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { NOTIFICATIONS_SERVICE } from '@app/common';
+import { NOTIFICATIONS_SERVICE, purchaseNotification } from '@app/common';
 import { ClientProxy } from '@nestjs/microservices';
 import { PaymentsCreateChargeDto } from '../dto/payments-create-charge.dto';
 import { StripePaymentsProcessor } from '../libs/payments-procesors/StripePaymentsProcessor';
@@ -20,7 +20,7 @@ export class PaymentsService {
     // Async broadcast event/message to the notifications microservice triggering a notification email event
     this.notificationsService.emit('notify_email', {
       email,
-      text: `Your payment of $${amount} has completed successfully`,
+      text: purchaseNotification(amount),
     });
 
     return paymentIntent;
