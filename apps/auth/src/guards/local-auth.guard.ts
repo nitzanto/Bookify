@@ -1,4 +1,4 @@
 import { AuthGuard } from '@nestjs/passport';
 
-// local is the default strategy name
+// Injecting the local strategy to be used via the LocalAuthGuard
 export class LocalAuthGuard extends AuthGuard('local') {}

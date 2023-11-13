@@ -1,10 +1,11 @@
 import { Module } from '@nestjs/common';
-import { PaymentsController } from './payments.controller';
-import { PaymentsService } from './payments.service';
+import { PaymentsController } from '../controllers/payments.controller';
+import { PaymentsService } from '../services/payments.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import * as Joi from 'joi';
 import { LoggerModule, NOTIFICATIONS_SERVICE } from '@app/common';
 import { ClientsModule, Transport } from '@nestjs/microservices';
+import { StripePaymentsProcessor } from '../libs/payments-procesors/StripePaymentsProcessor';
 
 @Module({
   imports: [
@@ -33,6 +34,6 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
     ]),
   ],
   controllers: [PaymentsController],
-  providers: [PaymentsService],
+  providers: [PaymentsService, StripePaymentsProcessor],
 })
 export class PaymentsModule {}

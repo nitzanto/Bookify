@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { ReservationsService } from './reservations.service';
-import { ReservationsController } from './reservations.controller';
+import { ReservationsService } from '../services/reservations.service';
+import { ReservationsController } from '../controllers/reservations.controller';
 import {
   AUTH_SERVICE,
   DatabaseModule,
@@ -8,11 +8,11 @@ import {
   LoggerModule,
   PAYMENTS_SERVICE,
 } from '@app/common';
-import { ReservationsRepository } from './reservations.repository';
+import { ReservationsRepository } from '../repositories/reservations.repository';
 import {
   ReservationDocument,
   ReservationSchema,
-} from './models/reservation.schema';
+} from '../models/reservation.schema';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import * as Joi from 'joi';
 import { ClientsModule, Transport } from '@nestjs/microservices';
