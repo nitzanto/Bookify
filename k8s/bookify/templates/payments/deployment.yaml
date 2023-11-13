@@ -29,6 +29,11 @@ spec:
                 secretKeyRef:
                   name: stripe
                   key: apiKey
+            - name: RABBITMQ_URI
+              valueFrom:
+                secretKeyRef:
+                  name: rabbitmq
+                  key: connectionString
 
 
           ports:

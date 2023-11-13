@@ -23,6 +23,11 @@ spec:
                 secretKeyRef:
                   name: mongodb
                   key: connectionString
+            - name: RABBITMQ_URI
+              valueFrom:
+                secretKeyRef:
+                  name: rabbitmq
+                  key: connectionString
             - name: JWT_SECRET
               valueFrom:
                 secretKeyRef:
