@@ -47,7 +47,7 @@ steps:
       'me-west1-docker.pkg.dev/bookify-401118/payments/production'
     ]
 
-  # Notifications Serviceh
+  # Notifications Service
   - name: 'gcr.io/cloud-builders/docker'
     args: [
       'build',
@@ -63,4 +63,10 @@ steps:
       'me-west1-docker.pkg.dev/bookify-401118/notifications/production'
     ]
 
-
+  # To Update the images within the GKE kubernetes cluster to the newest versions
+  - name: 'gcr.io/cloud-builders/kubectl'
+    args: [
+      'rollout',
+      'restart',
+      'deployment'
+    ]
