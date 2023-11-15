@@ -38,14 +38,5 @@
     <p>
       <img src="https://i.imgur.com/if9GmVc.png" />
     </p>
-     <h2>Planned Features</h2>
-    <ul>
-        <li>Deploying the application on AWS</li>
-        <li>Implementing an automated CI/CD on AWS with CodePipeLine</li>
-        <li>Extra User Roles - e.g. admin</li>
-        <li>Changing the Database Module to use MySQL with TypeORM</li>
-        <li>gRPC</li>
-        <li>GraphQL</li>
-    </ul> 
 </body>
 </html>
