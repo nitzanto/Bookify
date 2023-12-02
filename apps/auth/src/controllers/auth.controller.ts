@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Res, UseGuards } from '@nestjs/common';
+import { Controller, Post, Res, UseGuards } from '@nestjs/common';
 import { AuthService } from '../services/auth.service';
 import { LocalAuthGuard } from '../guards/local-auth.guard';
 import { CurrentUser, UserDocument } from '@app/common';
@@ -23,7 +23,7 @@ export class AuthController {
   }
 
   @UseGuards(JwtAuthGuard)
-  @Get('logout')
+  @Post('logout')
   async logout(@Res({ passthrough: true }) response: Response) {
     // Call the logout method from the AuthService
     await this.authService.logout(response);
