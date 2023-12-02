@@ -7,6 +7,10 @@ import * as cookieParser from 'cookie-parser';
 
 async function bootstrap() {
   const app = await NestFactory.create(ReservationsModule);
+  app.enableCors({
+    origin: 'http://localhost:5173',
+    credentials: true, // enable credentials (cookies, authorization headers)
+  });
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
   app.useLogger(app.get(Logger));
   app.use(cookieParser());
