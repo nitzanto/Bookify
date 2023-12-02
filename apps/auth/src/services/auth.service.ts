@@ -33,4 +33,9 @@ export class AuthService {
 
     return token;
   }
+
+  async logout(response: Response): Promise<void> {
+    // Clear the JWT cookie
+    response.clearCookie('Authentication');
+  }
 }

@@ -1,4 +1,4 @@
-import { Controller, Post, Res, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Res, UseGuards } from '@nestjs/common';
 import { AuthService } from '../services/auth.service';
 import { LocalAuthGuard } from '../guards/local-auth.guard';
 import { CurrentUser, UserDocument } from '@app/common';
@@ -20,6 +20,14 @@ export class AuthController {
     // User is valid and JWT is being set to this user (client)
     const jwt = await this.authService.login(user, response);
     response.send(jwt);
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Get('logout')
+  async logout(@Res({ passthrough: true }) response: Response) {
+    // Call the logout method from the AuthService
+    await this.authService.logout(response);
+    response.status(200).send('Logged out successfully');
   }
 
   // Validates the user's JWT token via the JwtAuthGuard, ensuring the incoming message is authenticated.
