@@ -16,6 +16,12 @@ export class ReservationDocument extends AbstractDocument {
   userId: string;
 
   @Prop()
+  restaurantId: string;
+
+  @Prop()
+  reservationDate: Date;
+
+  @Prop()
   invoiceId: string;
 }
 
