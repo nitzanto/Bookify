@@ -23,7 +23,7 @@ export class NotificationsService {
       from: this.configService.get('SMTP_USER'),
       to: email,
       subject: 'Bookify Notification',
-      text,
+      html: text,
     });
   }
 }
