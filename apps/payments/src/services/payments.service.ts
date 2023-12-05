@@ -17,7 +17,7 @@ export class PaymentsService {
     const paymentIntent =
       await this.stripePaymentProcessor.processPayment(amount);
 
-    const invoiceId = paymentIntent.invoice ? paymentIntent.invoice : 'N/A';
+    const invoiceId = paymentIntent.id ? paymentIntent.id : 'N/A';
 
     // Async broadcast event/message to the notifications microservice triggering a notification email event
     this.notificationsService.emit('notify_email', {
