@@ -22,7 +22,7 @@ export class NotificationsService {
     await this.transporter.sendMail({
       from: this.configService.get('SMTP_USER'),
       to: email,
-      subject: 'Bookify Notification',
+      subject: 'Bookify Payment Confirmation',
       html: text,
     });
   }
