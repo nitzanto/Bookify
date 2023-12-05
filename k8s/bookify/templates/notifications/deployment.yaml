@@ -23,7 +23,7 @@ spec:
             - name: GOOGLE_OAUTH_CLIENT_ID
               value: 171741168429-8ahe7q1c7nje96qhd4u5ve2pjmm3p8p4.apps.googleusercontent.com
             - name: SMTP_USER
-              value: nitzan16001@gmail.com
+              value: bookifytheapp@gmail.com
             - name: GOOGLE_OAUTH_CLIENT_SECRET
               valueFrom:
                 secretKeyRef:
