@@ -21,7 +21,7 @@ spec:
             - name: PORT
               value: '3000'
             - name: GOOGLE_OAUTH_CLIENT_ID
-              value: 736804291538-racjen4jor9iuc0h8viodcg1tp92nrnt.apps.googleusercontent.com
+              value: 171741168429-8ahe7q1c7nje96qhd4u5ve2pjmm3p8p4.apps.googleusercontent.com
             - name: SMTP_USER
               value: nitzan16001@gmail.com
             - name: GOOGLE_OAUTH_CLIENT_SECRET
