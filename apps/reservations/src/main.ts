@@ -8,12 +8,7 @@ import * as cookieParser from 'cookie-parser';
 async function bootstrap() {
   const app = await NestFactory.create(ReservationsModule);
   app.enableCors({
-    origin: [
-      'http://localhost:5173',
-      'https://bookify-sand.vercel.app',
-      'https://bookify-9tw29quy8-nitzanto.vercel.app',
-      'https://bookify-nitzanto.vercel.app',
-    ],
+    origin: 'http://localhost:5173',
     credentials: true, // enable credentials (cookies, authorization headers)
   });
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
