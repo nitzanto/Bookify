@@ -17,6 +17,7 @@ async function bootstrap() {
       'https://bookify-9tw29quy8-nitzanto.vercel.app',
       'https://bookify-nitzanto.vercel.app',
       'https://g3apm55msb.execute-api.il-central-1.amazonaws.com/prod/',
+      'https://g3apm55msb.execute-api.il-central-1.amazonaws.com/prod',
     ],
     credentials: true, // enable credentials (cookies, authorization headers)
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
