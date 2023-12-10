@@ -11,7 +11,12 @@ async function bootstrap() {
   const configService = app.get(ConfigService);
 
   app.enableCors({
-    origin: ['http://localhost:5173', 'https://bookify-sand.vercel.app/'],
+    origin: [
+      'http://localhost:5173',
+      'https://bookify-sand.vercel.app',
+      'https://bookify-9tw29quy8-nitzanto.vercel.app',
+      'https://bookify-nitzanto.vercel.app',
+    ],
     credentials: true, // enable credentials (cookies, authorization headers)
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
   });
