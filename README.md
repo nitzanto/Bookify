@@ -78,8 +78,7 @@
 
 <li><p>Update reservation's information:</p></li>
 <pre><code>PUT /reservations/:reservation_id</code></pre>
-<pre><code>
-Example request body:
+<pre><code>Example request body:
 {
    "startDate": "02-01-2021",
    "endDate": "02-01-2023",
@@ -96,8 +95,8 @@ Example request body:
 </p>
 <li><p>Logging into account:</p></li>
 <pre><code>POST /auth/login</code></pre>
-<pre><code>
-    {
+<pre><code>Example request body:
+{
 	"email": "bookify1@gmail.com",
 	"password": "Password123!"
 }
