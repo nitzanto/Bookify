@@ -10,7 +10,10 @@
     <p>
         A <strong>production-grade</strong> reservation booking system with various features, including a scalable backend with NestJS microservices, Kubernetes deployment on Google Cloud, JWT authentication, Stripe payment integration, email notifications, and RabbitMQ message processing. Implemented CI/CD pipelines and production Dockerfiles for each microservice.
     </p>
-    <strong><a href="https://github.com/nitzanto/Bookify-Frontend">For the frontend click here</a></strong>
+    <p>
+    <strong><a href="https://github.com/nitzanto/Bookify-Frontend">For the Frontend click here</a></strong>
+        </p>
+    <strong><a href="https://github.com/nitzanto/Restauranteer">For the Restauranteer API (AWS Lambda Function) click here</a></strong>
     <h3>Software Engineering Principles</h3>
 
 <ul>
@@ -39,5 +42,77 @@
     <p>
       <img src="https://i.imgur.com/if9GmVc.png" />
     </p>
+    
+<h2>API Paths</h2>
+
+<p>Here are the main API endpoints with examples of how to use them:</p>
+
+<h3>Reservations Resource</h3>
+<strong>This resource can be accessed only by authenticated users</strong>
+<ul>
+<li><p>Retrieve all of the existing reservations for resturants with assigned users</p></li>
+<pre><code>GET /reservations</code></pre>
+
+<li><p>Retrieve a specific reservation:</p></li>
+<pre><code>GET /reservations/:reservation_id</code></pre>
+
+<li><p><u></u>Create a new reservation (the userId will be automatically assigned):</p></li>
+<pre><code>POST /reservations</code></pre>
+<pre><code>Example request body:
+{
+	"startDate": "02-01-2021",
+	"endDate": "02-01-2023",
+	"restaurantId": "f24e3777-f167-4920-9652-15fefcd73b23",
+	"reservationDate": "02-01-2023 Monday 18:00 PM",
+	"charge": {
+		"amount": 199,
+		"card": {
+			"cvc": "413",
+			"exp_month": 12,
+			"exp_year": 2027,
+			"number": "4242 4242 4242 4242"
+		}
+	}
+}
+</code></pre>
+
+<li><p>Update reservation's information:</p></li>
+<pre><code>PUT /reservations/:reservation_id</code></pre>
+<pre><code>
+Example request body:
+{
+   "startDate": "02-01-2021",
+   "endDate": "02-01-2023",
+   "reservationDate": "02-01-2023 Monday 18:00 PM",
+}
+</code></pre>
+
+<li><p>Delete a reservation:</p></li>
+<pre><code>DELETE /reservations/:reservation_id</code></pre>
+<br></br>
+<h3>Auth Resource</h3>
+<p>
+    By logging in you receive a JWT Token which is signed by the server and an HTTP cookie is returned and can access the rest of the resources.
+</p>
+<li><p>Logging into account:</p></li>
+<pre><code>POST /auth/login</code></pre>
+<pre><code>
+    {
+	"email": "bookify1@gmail.com",
+	"password": "Password123!"
+}
+</code></pre>
+<li><p>Logging out account:</p></li>
+<pre><code>POST /auth/logout</code></pre>
+
+<h4>Users Resource (Included within Auth Resource)</h4>
+<li><p>Sign-Up / Create a new user for the Bookify App:</p></li>
+<pre><code>POST /users</code></pre>
+<pre><code>Example request body:
+{
+	"email": "bookify1@gmail.com",
+	"password": "Password123!"
+}</code></pre>
+</ul>
 </body>
 </html>
